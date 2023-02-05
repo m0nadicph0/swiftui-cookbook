@@ -3,6 +3,8 @@
 Use [Starscream](https://github.com/daltoniam/Starscream) library. 
 1. File -> Add Packages -> Find `https://github.com/daltoniam/Starscream.git` -> Add package
 
+2. Add the following code in the `ContentView`
+
 ```
 import SwiftUI
 import Starscream
