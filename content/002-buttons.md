@@ -187,4 +187,51 @@ struct ContentView: View {
     }
 }
 ```
+## Custom button styles
+![custom-button-style](https://user-images.githubusercontent.com/123083726/216807585-78c25c6d-562c-478d-9948-7fbde00c87dd.gif)
+
+```
+struct BlueButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(Color(red: 0, green: 0, blue: 0.5))
+            .foregroundColor(.white)
+            .clipShape(Capsule())
+            .scaleEffect(configuration.isPressed ? 1.1 : 1)
+            .animation(.easeOut(duration: 0.05), value: configuration.isPressed)
+    }
+}
+
+struct GrowingButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(.blue)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .scaleEffect(configuration.isPressed ? 1.1 : 1)
+            .animation(.easeOut(duration: 0.05), value: configuration.isPressed)
+    }
+}
+
+
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+
+            Button("Click Me !") {
+                print("button clicked...")
+            }.buttonStyle(BlueButton())
+            
+            Button("Click Me !") {
+                print("button clicked...")
+            }.buttonStyle(GrowingButton())
+
+        }.padding()
+    }
+}
+```
+
 
