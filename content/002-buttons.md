@@ -1,6 +1,6 @@
 # Buttons
 
-## Most basic button
+## Basic button
 
 ```
 Button("Click me") {
@@ -49,3 +49,101 @@ struct ContentView: View {
     }
 }
 ```
+
+## Using Tint
+
+<img width="259" alt="tint" src="https://user-images.githubusercontent.com/123083726/216804536-b6267fc9-cc23-4a1a-b8d5-b134b2e58436.png">
+
+```
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Button("Borderless Red") { }
+                .buttonStyle(.borderless)
+                .tint(.red)
+                .padding()
+            Button("Bordered Prominent Red") { }
+                .buttonStyle(.borderedProminent)
+                .tint(.red)
+                .padding()
+        }
+        .padding()
+    }
+}
+```
+
+## Image buttons
+<img width="360" alt="img-buttons" src="https://user-images.githubusercontent.com/123083726/216804733-0acbe9f3-cc3a-4b5d-af93-ff41bca050ac.png">
+
+```
+struct ContentView: View {
+    var body: some View {
+        HStack {
+            Button {
+                print("edited")
+            } label: {
+                Image(systemName: "square.and.pencil.circle.fill")
+                    .foregroundColor(.mint)
+            }
+            
+            Button {
+                print("deleted")
+            } label: {
+                Image(systemName: "trash.circle.fill")
+                    .foregroundColor(.red)
+            }
+        }
+        .padding()
+    }
+}
+````
+
+## Buttons with image and text
+
+<img width="183" alt="btn-with-label" src="https://user-images.githubusercontent.com/123083726/216805178-debe12e8-d36a-44c8-9de8-59418686e449.png">
+
+
+```
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            HStack {
+                Button {
+                    print("edited")
+                } label: {
+                    Label("Edit", systemImage: "square.and.pencil.circle.fill")
+                        .foregroundColor(.white)
+                }.buttonStyle(.borderedProminent)
+                
+                Button {
+                    print("deleted")
+                } label: {
+                    Label("Delete", systemImage: "trash.circle.fill")
+                        .foregroundColor(.white)
+                }.buttonStyle(.borderedProminent).tint(.red)
+            }
+            
+            
+            
+            
+            HStack {
+                Button {
+                    print("edited")
+                } label: {
+                    Label("Edit", systemImage: "square.and.pencil.circle.fill")
+                        .foregroundColor(.blue)
+                }
+                
+                Button {
+                    print("deleted")
+                } label: {
+                    Label("Delete", systemImage: "trash.circle.fill")
+                        .foregroundColor(.red)
+                }
+            }
+        }
+        .padding()
+    }
+}
+```
+
