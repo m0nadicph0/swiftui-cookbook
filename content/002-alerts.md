@@ -50,5 +50,29 @@ struct ContentView: View {
     }
 }
 ```
+## Alert with TextField
+
+```
+struct ContentView: View {
+    @State private var alertVisible = false
+    @State private var licenseKey = ""
+    var body: some View {
+        Button("Show Alert") {
+            alertVisible.toggle()
+        }
+        .alert("About App", isPresented: $alertVisible) {
+            TextField("License Key", text: $licenseKey)
+            Button("OK") {
+                print("You entered \(licenseKey)")
+            }
+        } message: {
+            Text("Enter license key here.")
+        }
+        
+    }
+
+}
+```
+
 
 
