@@ -2,7 +2,7 @@
 
 ## Basic Alert
 
-```
+```swift
 struct ContentView: View {
     @State private var alertVisible:Bool = false
     
@@ -23,7 +23,7 @@ struct ContentView: View {
 
 ## Alert buttons with different roles
 
-```
+```swift
 struct ContentView: View {
     @State private var alertVisible:Bool = false
     
