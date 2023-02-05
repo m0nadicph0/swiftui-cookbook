@@ -25,7 +25,7 @@ struct ContentView: View {
 }
 ```
 
-### Button Styles
+## Button Styles
 
 <img width="270" alt="button-styles" src="https://user-images.githubusercontent.com/123083726/216801903-52670367-5298-4d97-83b9-09160607a9b7.png">
 
@@ -143,6 +143,47 @@ struct ContentView: View {
             }
         }
         .padding()
+    }
+}
+```
+## Custom Buttons
+
+<img width="169" alt="custom" src="https://user-images.githubusercontent.com/123083726/216806206-4d039930-a5d9-4b69-8ce1-17d3a0f5abb8.png">
+
+```
+struct ContentView: View {
+    var body: some View {
+        VStack {
+
+            Button {
+                print("Button was tapped")
+            } label: {
+                Text("Tap me!")
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(.red)
+                    .clipShape(Capsule())
+                    .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                    .padding()
+            }.buttonStyle(.borderless)
+            
+            Button{
+                print("Button was tapped")
+            }label:{
+                Text("Tap Me !")
+                    .font(.system(size: 17))
+                    .fontWeight(.bold)
+                    .foregroundColor(.green)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 25)
+                            .fill(Color.white)
+                            .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                )
+                .padding()
+            }.buttonStyle(.borderless)
+            
+        }
     }
 }
 ```
