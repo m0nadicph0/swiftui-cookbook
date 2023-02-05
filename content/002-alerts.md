@@ -52,7 +52,7 @@ struct ContentView: View {
 ```
 ## Alert with TextField
 
-```
+```swift
 struct ContentView: View {
     @State private var alertVisible = false
     @State private var licenseKey = ""
