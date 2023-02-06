@@ -40,7 +40,7 @@ struct UIKitchenSinkApp: App {
 ```
 </details>
 
-## Hide window titlebar and make entire windo background as white
+## Hide window titlebar and make entire window background as white
 <details>
   <summary>Expand</summary>
 
