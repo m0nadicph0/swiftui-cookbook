@@ -43,6 +43,7 @@ struct UIKitchenSinkApp: App {
 ## Hide window titlebar and make entire windo background as white
 <details>
   <summary>Expand</summary>
+
 Set window style `.hiddenTitleBar` in the `WindowGroup`
 
 ```swift
