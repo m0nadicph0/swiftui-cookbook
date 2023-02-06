@@ -73,3 +73,35 @@ struct ContentView: View {
 }  
 ```
 </details>
+
+## Close a macOS SwiftUI application when the last window is closed by the user
+<details>
+  <summary>Expand</summary>
+
+Create an app delegate class
+```swift
+class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+}
+```
+
+Add a property wrapper for the app class
+  
+```
+@main
+struct SwiftUIApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .frame(minWidth: 300, idealWidth: 300, maxWidth: .infinity, minHeight: 300, idealHeight: 300, maxHeight: .infinity)
+    
+        }
+    }
+}
+```
+</details>
+
