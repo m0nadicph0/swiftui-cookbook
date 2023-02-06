@@ -39,3 +39,36 @@ struct UIKitchenSinkApp: App {
 }
 ```
 </details>
+
+## Hide window titlebar and make entire windo background as white
+<details>
+  <summary>Expand</summary>
+Set window style `.hiddenTitleBar` in the `WindowGroup`
+
+```swift
+@main
+struct TodoApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }.windowStyle(.hiddenTitleBar)
+    }
+}
+```  
+In the `ContentView` set the background
+
+```
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            // ...
+        }
+        .background {
+            Rectangle()
+                .fill(.white)
+                .ignoresSafeArea()
+        }
+    }
+}  
+```
+</details>
