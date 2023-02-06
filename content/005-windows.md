@@ -97,11 +97,31 @@ struct SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 300, idealWidth: 300, maxWidth: .infinity, minHeight: 300, idealHeight: 300, maxHeight: .infinity)
-    
         }
     }
 }
 ```
 </details>
 
+## Disable show all tabs menu
+
+<details>
+  <summary>Expand</summary>
+  
+```
+@main
+struct SwiftUIApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                ContentView()
+                .onAppear{
+                    NSWindow.allowsAutomaticWindowTabbing = false
+                }
+    
+        }
+    }
+}
+```
